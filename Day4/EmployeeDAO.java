@@ -16,14 +16,6 @@ public class EmployeeDAO {
     private static final String UPDATE_EMP = "UPDATE employees set first_name = ?, last_name = ? WHERE employee_id = ?";
     private static final String DELETE_EMP = "delete from employees where employee_id = ?";
 
-    static {
-        try {
-            // Load the SQLite JDBC driver (you must include the driver jar in your classpath)
-            Class.forName("org.sqlite.JDBC");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
     public void insertEmp(Employees d) throws SQLException {
         Connection conn = DriverManager.getConnection(URL);
